@@ -30,7 +30,7 @@ The dataset is stored in a comma-separated-value (CSV) file and there are a tota
 
 First of all, we need to check the libraries, clear all the variables, ..., restart the setup.
 
-```{r set_options, include=FALSE}
+```{r, echo=FALSE}
 
 # Author <- "José Mª Sebastián Carrillo"
 
@@ -235,7 +235,7 @@ str(completeActivityData)
 ```
 
 
-Using the new column data, make a plot with the two types of days (weekday-weekend)
+Using the new column data, make a plot with the two types of days (weekday-weekend).
 ```{r echo=TRUE}
 typeDayWeekData=aggregate(steps~interval+day,
                           completeActivityData,

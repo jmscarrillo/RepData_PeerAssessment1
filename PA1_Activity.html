@@ -144,6 +144,9 @@ $(document).ready(function () {
 <div id="loading-and-preprocessing-the-data" class="section level2">
 <h2>Loading and preprocessing the data</h2>
 <p>First of all, we need to check the libraries, clear all the variables, …, restart the setup.</p>
+<pre><code>## Loading required package: plyr</code></pre>
+<pre><code>## Loading required package: lattice</code></pre>
+<pre><code>## Loading required package: timeDate</code></pre>
 <ol style="list-style-type: decimal">
 <li>Code for reading in the dataset and/or processing the data.</li>
 </ol>
@@ -322,7 +325,7 @@ str(completeActivityData)</code></pre>
 ##  $ date    : Date, format: &quot;2012-10-01&quot; &quot;2012-10-02&quot; ...
 ##  $ interval: int  0 0 0 0 0 0 0 0 0 0 ...
 ##  $ day     : Factor w/ 2 levels &quot;weekday&quot;,&quot;weekend&quot;: 1 1 1 1 1 2 2 1 1 1 ...</code></pre>
-<p>Using the new column data, make a plot with the two types of days (weekday-weekend)</p>
+<p>Using the new column data, make a plot with the two types of days (weekday-weekend).</p>
 <pre class="r"><code>typeDayWeekData=aggregate(steps~interval+day,
                           completeActivityData,
                           mean)
