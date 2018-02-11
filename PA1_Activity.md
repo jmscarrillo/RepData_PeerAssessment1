@@ -31,6 +31,17 @@ The dataset is stored in a comma-separated-value (CSV) file and there are a tota
 First of all, we need to check the libraries, clear all the variables, ..., restart the setup.
 
 
+```
+## Loading required package: plyr
+```
+
+```
+## Loading required package: lattice
+```
+
+```
+## Loading required package: timeDate
+```
 
 1. Code for reading in the dataset and/or processing the data.
 
@@ -88,7 +99,7 @@ hist(activityPerDay$steps,
      breaks=24)
 ```
 
-![](PA1_Activity_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
+![](PA1_Activity_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
 
 3. Mean and median number of steps taken each day
 
@@ -127,7 +138,7 @@ abline(v=meanActivityPerDay, lwd = 3, col = 'red')
 abline(v=medianActivityPerDay, lwd = 3, col = 'blue')
 ```
 
-![](PA1_Activity_files/figure-html/unnamed-chunk-7-1.png)<!-- -->
+![](PA1_Activity_files/figure-html/unnamed-chunk-8-1.png)<!-- -->
 
 ## What is the average daily activity pattern?
 
@@ -161,7 +172,7 @@ plot(x=activityPerInterval$interval,
      ylab="Steps")
 ```
 
-![](PA1_Activity_files/figure-html/unnamed-chunk-9-1.png)<!-- -->
+![](PA1_Activity_files/figure-html/unnamed-chunk-10-1.png)<!-- -->
 
 5. The 5-minute interval that, on average, contains the maximum number of steps.
 
@@ -211,7 +222,7 @@ legend("topright",
        )
 ```
 
-![](PA1_Activity_files/figure-html/unnamed-chunk-12-1.png)<!-- -->
+![](PA1_Activity_files/figure-html/unnamed-chunk-13-1.png)<!-- -->
 
 ## Imputing missing values
 
@@ -289,7 +300,7 @@ hist(completeActivityPerDay$steps,
      breaks=24)
 ```
 
-![](PA1_Activity_files/figure-html/unnamed-chunk-17-1.png)<!-- -->
+![](PA1_Activity_files/figure-html/unnamed-chunk-18-1.png)<!-- -->
 
 ## Are there differences in activity patterns between weekdays and weekends?
 
@@ -316,7 +327,7 @@ str(completeActivityData)
 ```
 
 
-Using the new column data, make a plot with the two types of days (weekday-weekend)
+Using the new column data, make a plot with the two types of days (weekday-weekend).
 
 ```r
 typeDayWeekData=aggregate(steps~interval+day,
@@ -330,4 +341,4 @@ xyplot(steps~interval|factor(day),
        type="l")
 ```
 
-![](PA1_Activity_files/figure-html/unnamed-chunk-19-1.png)<!-- -->
+![](PA1_Activity_files/figure-html/unnamed-chunk-20-1.png)<!-- -->
