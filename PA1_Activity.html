@@ -144,8 +144,21 @@ $(document).ready(function () {
 <div id="loading-and-preprocessing-the-data" class="section level2">
 <h2>Loading and preprocessing the data</h2>
 <p>First of all, we need to check the libraries, clear all the variables, …, restart the setup.</p>
+<pre class="r"><code># Author &lt;- &quot;José Mª Sebastián Carrillo&quot;
+
+rm(list = ls())
+
+if (!require('plyr')) {
+    stop('The package plyr was not installed!')
+}</code></pre>
 <pre><code>## Loading required package: plyr</code></pre>
+<pre class="r"><code>if (!require('lattice')) {
+    stop('The package lattice was not installed!')
+}</code></pre>
 <pre><code>## Loading required package: lattice</code></pre>
+<pre class="r"><code>if (!require('timeDate')) {
+    stop('The package timeDate was not installed!')
+}</code></pre>
 <pre><code>## Loading required package: timeDate</code></pre>
 <ol style="list-style-type: decimal">
 <li>Code for reading in the dataset and/or processing the data.</li>

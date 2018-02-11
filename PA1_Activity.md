@@ -1,8 +1,9 @@
 ---
-title: "Reproducible Research: Peer Assessment 1"
-output: 
+title: 'Reproducible Research: Peer Assessment 1'
+output:
   html_document:
-    keep_md: true
+    keep_md: yes
+  pdf_document: default
 ---
 
 ## Introduction
@@ -31,12 +32,34 @@ The dataset is stored in a comma-separated-value (CSV) file and there are a tota
 First of all, we need to check the libraries, clear all the variables, ..., restart the setup.
 
 
+```r
+# Author <- "José Mª Sebastián Carrillo"
+
+rm(list = ls())
+
+if (!require('plyr')) {
+    stop('The package plyr was not installed!')
+}
+```
+
 ```
 ## Loading required package: plyr
 ```
 
+```r
+if (!require('lattice')) {
+    stop('The package lattice was not installed!')
+}
+```
+
 ```
 ## Loading required package: lattice
+```
+
+```r
+if (!require('timeDate')) {
+    stop('The package timeDate was not installed!')
+}
 ```
 
 ```

@@ -1,8 +1,9 @@
 ---
-title: "Reproducible Research: Peer Assessment 1"
-output: 
+title: 'Reproducible Research: Peer Assessment 1'
+output:
   html_document:
-    keep_md: true
+    keep_md: yes
+  pdf_document: default
 ---
 
 ## Introduction
@@ -30,7 +31,7 @@ The dataset is stored in a comma-separated-value (CSV) file and there are a tota
 
 First of all, we need to check the libraries, clear all the variables, ..., restart the setup.
 
-```{r, echo=FALSE}
+```{r}
 
 # Author <- "José Mª Sebastián Carrillo"
 
@@ -50,14 +51,14 @@ if (!require('timeDate')) {
 1. Code for reading in the dataset and/or processing the data.
 
 Then, read the file and assing the correct metadata values
-```{r,echo=TRUE}
+```{r}
 activityDataFile <- "activity.csv"
 activityData <- read.csv(activityDataFile, stringsAsFactors = FALSE, na.strings = "NA")
 activityData$date <- as.Date(activityData$date)
 ```
 
 Now we can see the data loaded
-```{r,echo=TRUE}
+```{r}
 str(activityData)
 ```
 
@@ -66,7 +67,7 @@ str(activityData)
 2. Histogram of the total number of steps taken each day.
 
 First, we need to aggregate the values per day and remane the data column
-```{r,echo=TRUE}
+```{r}
 activityPerDay <- aggregate(activityData$steps,
                             by=list(date=activityData$date),
                             FUN=sum,
@@ -76,7 +77,7 @@ str(activityPerDay)
 ```
 
 And then plot the histogram
-```{r,echo=TRUE}
+```{r}
 hist(activityPerDay$steps,
      main="Total number of steps taken each day",
      xlab="Steps",
@@ -117,7 +118,7 @@ abline(v=medianActivityPerDay, lwd = 3, col = 'blue')
 4. Time series plot of the average number of steps taken.
 
 First, we need to aggregate the values per interval and remane the data column
-```{r,echo=TRUE}
+```{r}
 activityPerInterval <- aggregate(activityData$steps,
                             by=list(interval=activityData$interval),
                             FUN=sum,
@@ -199,7 +200,7 @@ str(completeActivityData)
 7. Histogram of the total number of steps taken each day after missing values are imputed
 
 First, we need to aggregate the values per day and remane the data column
-```{r,echo=TRUE}
+```{r}
 completeActivityPerDay <- aggregate(completeActivityData$steps,
                                     by=list(date=completeActivityData$date),
                                     FUN=sum,
@@ -209,7 +210,7 @@ str(completeActivityPerDay)
 ```
 
 And then plot the histogram
-```{r,echo=TRUE}
+```{r}
 hist(completeActivityPerDay$steps,
      main="Total number of steps taken each day",
      xlab="Steps",
